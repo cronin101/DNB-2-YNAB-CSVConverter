@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+date_input, filename, _ = ARGV
+date = DateTime.parse date_input
+
+transactions = `./dnb_csv_mangler "#{filename}"`.split("\n")
+
+# Keep the header
+puts transactions.shift
+
+# Print lines that are before or on the 'since' date
+transactions.take_while do |line|
+  this_date, *_ = line.split ','
+  (DateTime.parse this_date) >= date
+end.each { |l| puts l }
