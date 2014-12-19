@@ -1,7 +1,7 @@
 DNB-2-YNAB-CSVConverter
 =======================
 
-Converts the DNB CSV format to that required for importing into YNAB4
+Converts the DNB CSV format into that required for importing into YNAB4
 
 ##Usage
 
