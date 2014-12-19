@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+
+puts "Date,Payee,Category,Memo,Outflow,Inflow"
+File.open(ARGV.first, "r:ISO-8859-1") do |file|
+  _, *statement = CSV.parse(file.read.encode("UTF-8"), col_sep: ';')
+
+  define_method(:fd, ->(date){ date.gsub('.', '/') })
+  define_method(:f,  ->(str) { str.gsub(',',  '')  })
+
+  statement.each do |line|
+    date, description, _, outflow, inflow = line
+    puts "#{fd(date)},#{f(description)},,,#{f(outflow)},#{f(inflow)}"
+  end
+end
+
