@@ -1,5 +1,5 @@
-DNB + YNAB Tools
-=======================
+#DNB + YNAB Tools
+> Nå kan du se hvor pengene dine gikk.
 
 Converts the DNB CSV format into that required for importing into YNAB4
 
