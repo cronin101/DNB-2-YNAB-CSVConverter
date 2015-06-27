@@ -3,6 +3,11 @@
 
 #####Converts the DNB CSV format into that required for importing into YNAB4
 
+--
+#####NB: A re-written online version of this tool is now available - requiring no download or configuration.
+[Try out the online version here!](http://cronin101.github.io/DNB2YNAB-TypeScript/)
+--
+
 ##Usage
 
 ```zsh
